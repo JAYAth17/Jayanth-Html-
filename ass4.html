@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attributes in HTML - The 17 Sports</title>
+  <style>
+    .highlight {
+      color: blue;
+      font-weight: bold;
+    }
+    #special {
+      color: red;
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation with href links -->
+  <nav>
+    <a href="#home" class="highlight">Home</a> |
+    <a href="#about" class="highlight">About</a> |
+    <a href="#products" class="highlight">Products</a> |
+    <a href="#contact" id="special">Contact</a>
+  </nav>
+
+  <!-- Sections with unique IDs -->
+  <section id="home">
+    <h1 title="Welcome to The 17">The 17 Sports Store</h1>
+    <p lang="en">Welcome to our <span class="highlight">sports hub</span> for all your needs!</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We provide high-quality sports equipment with the best deals.</p>
+    <p hidden>This text is hidden using the <code>hidden</code> attribute.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <img src="cricket.jpg" alt="Cricket Bat" width="300" height="200" title="Cricket Bat">
+    <img src="football.jpg" alt="Football" width="300" height="200" title="Football">
+    <p>Click image to learn more:</p>
+    <a href="fitness.html"><img src="fitness.jpg" alt="Fitness Equipment" title="Fitness Gear"></a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email us: <a href="mailto:info@the17sports.com">info@the17sports.com</a></p>
+    <p>Download our brochure: <a href="brochure.pdf" download>Download PDF</a></p>
+    <p>Visit our partner site: <a href="https://www.nike.com" target="_blank">Nike</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The 17 Sports Store</p>
+  </footer>
+</body>
+</html>
