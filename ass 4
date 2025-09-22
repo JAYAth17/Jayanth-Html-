@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Practice Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .nav { margin: 10px; }
+    .nav a { margin-right: 15px; text-decoration: none; color: darkblue; }
+    section { padding: 20px; border-bottom: 1px solid #ccc; }
+    .highlight { background-color: yellow; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+  </div>
+
+  <!-- Sections with IDs -->
+  <section id="home">
+    <h1 class="highlight" title="Welcome!">Home Section</h1>
+    <p>Welcome to my first practice webpage.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Section</h2>
+    <p>This section explains the purpose of the page.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery Section</h2>
+    <p>Here are some images:</p>
+    <img src="nature.jpg" alt="Nature" width="300" title="Beautiful Nature">
+    <br><br>
+    <!-- Clickable Image -->
+    <a href="https://unsplash.com" target="_blank">
+      <img src="camera.jpg" alt="Camera Icon" width="100">
+    </a>
+  </section>
+
+</body>
+</html>
