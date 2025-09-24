@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lists and Tables Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin-bottom: 30px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Lists and Tables Practice</h1>
+
+  <h2>Shopping List (Unordered List)</h2>
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Eggs</li>
+    <li>Vegetables</li>
+  </ul>
+
+  <h2>Steps to Make Tea (Ordered List)</h2>
+  <ol>
+    <li>Boil water</li>
+    <li>Add tea leaves</li>
+    <li>Simmer for 2 minutes</li>
+    <li>Add milk and sugar</li>
+    <li>Strain and serve</li>
+  </ol>
+
+  <h2>Weekly Tasks (Nested List)</h2>
+  <ul>
+    <li>Groceries
+      <ul>
+        <li>Fruits</li>
+        <li>Vegetables</li>
+      </ul>
+    </li>
+    <li>Studies
+      <ol>
+        <li>Read textbook</li>
+        <li>Practice exercises</li>
+      </ol>
+    </li>
+  </ul>
+
+  <h2>Student Marks (Simple Table)</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Marks</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>Math</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>Alice</td>
+      <td>Science</td>
+      <td>90</td>
+    </tr>
+  </table>
+
+  <h2>Timetable (Using Colspan & Rowspan)</h2>
+  <table>
+    <tr>
+      <th>Day</th>
+      <th colspan="2">Subjects</th>
+    </tr>
+    <tr>
+      <td rowspan="2">Monday</td>
+      <td>Math</td>
+      <td>English</td>
+    </tr>
+    <tr>
+      <td>Science</td>
+      <td>History</td>
+    </tr>
+  </table>
+
+  <h2>Employee Details (Styled with CSS)</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Salary</th>
+    </tr>
+    <tr>
+      <td>Mike</td>
+      <td>HR</td>
+      <td>$3000</td>
+    </tr>
+    <tr>
+      <td>Sara</td>
+      <td>IT</td>
+      <td>$4000</td>
+    </tr>
+  </table>
+
+</body>
+</html>
