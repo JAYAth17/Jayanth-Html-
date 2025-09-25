@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 17 Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: darkblue;
+    }
+    h2 {
+      margin-top: 40px;
+      color: darkgreen;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: lightgray;
+    }
+    iframe {
+      display: block;
+      margin: 20px auto;
+      border: 2px solid black;
+    }
+    audio, video {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to The 17 Store</h1>
+  <p>Your one-stop shop for Technology & Sports Products</p>
+
+  <!-- PRODUCT TABLE -->
+  <h2>Available Products</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Category</th>
+      <th>Product</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Technology</td>
+      <td>iPhone 17 Pro</td>
+      <td>$999</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Technology</td>
+      <td>MacBook Pro</td>
+      <td>$1999</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Sports</td>
+      <td>Football</td>
+      <td>$25</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Sports</td>
+      <td>Tennis Racket</td>
+      <td>$120</td>
+    </tr>
+  </table>
+
+  <!-- IFRAME (Google Map Location of Store) -->
+  <h2>Our Store Location</h2>
+  <iframe src="https://www.google.com/maps/place/12%C2%B052'22.3%22N+80%C2%B013'34.0%22E/@12.872857,80.2235381,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.872857!4d80.226113?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D" 
+          width="600" height="400" allowfullscreen="" loading="lazy">
+  </iframe>
+
+  <!-- AUDIO (Store Jingle / Background Music) -->
+  <h2>Store Jingle</h2>
+  <audio controls>
+    <source src="store-jingle.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- VIDEO (Product Promo Video) -->
+  <h2>Product Promo</h2>
+  <video controls width="600">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+
+</body>
+</html>
