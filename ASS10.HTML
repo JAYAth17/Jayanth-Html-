@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 17 Stores – Flexbox Layout</title>
+  <style>
+    .flex-container {
+      display: flex;                /* activate flex */
+      flex-direction: row;           /* layout horizontally */
+      justify-content: space-around; /* spread out evenly */
+      align-items: flex-start;       /* align to the top */
+      gap: 20px;                     /* space between boxes */
+      flex-wrap: wrap;               /* wrap if there are more boxes */
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 2px solid #333;
+    }
+
+    .store-box {
+      flex: 0 0 200px;              /* width of each store box */
+      min-height: 180px;
+      background-color: #4CAF50;
+      color: #fff;
+      display: flex;
+      flex-direction: column;       /* stack title and description vertically */
+      justify-content: flex-start;
+      align-items: center;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .store-box h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .store-box p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The 17 Stores – Flexbox Layout</h1>
+  <p>This demonstrates how you could lay out multiple store “cards” using Flexbox.</p>
+
+  <div class="flex-container">
+    <div class="store-box">
+      <h3>Store 1</h3>
+      <p>Fashion & Lifestyle products with great discounts.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 2</h3>
+      <p>Fresh groceries and organic food delivery.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 3</h3>
+      <p>Electronics and gadgets at unbeatable prices.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 4</h3>
+      <p>Books, stationery and learning materials.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 5</h3>
+      <p>Home décor, furniture and kitchen essentials.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 6</h3>
+      <p>Sportswear and fitness equipment.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 7</h3>
+      <p>Beauty and personal care products.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 8</h3>
+      <p>Pet supplies and accessories.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 9</h3>
+      <p>Kids’ toys, clothing and school supplies.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 10</h3>
+      <p>Handcrafted gifts and souvenirs.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 11</h3>
+      <p>Jewellery and accessories.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 12</h3>
+      <p>Outdoor gear and travel essentials.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 13</h3>
+      <p>Health and wellness products.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 14</h3>
+      <p>Automobile parts and accessories.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 15</h3>
+      <p>Gaming consoles and accessories.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 16</h3>
+      <p>Music instruments and gear.</p>
+    </div>
+    <div class="store-box">
+      <h3>Store 17</h3>
+      <p>Local artisans & craft marketplace.</p>
+    </div>
+  </div>
+
+</body>
+</html>
