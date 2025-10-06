@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My 17-Store Grid Layout</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 100px 150px;
+      row-gap: 15px;
+      column-gap: 15px;
+      justify-content: center;
+      align-content: start;
+      background: #f2f2f2;
+      padding: 10px;
+    }
+
+    .item {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .item1 {
+      grid-column: span 2;
+    }
+
+    .item2 {
+      grid-row: span 2;
+    }
+
+    .item3 {
+      grid-area: 2 / 2 / 3 / 4;
+    }
+
+    .item4 {
+      justify-self: end;
+    }
+
+    .item5 {
+      align-self: center;
+    }
+
+    .item6 {
+      order: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">My 17-Store Grid Layout</h1>
+  <div class="grid-container">
+    <div class="item item1">Store 1</div>
+    <div class="item item2">Store 2</div>
+    <div class="item item3">Store 3</div>
+    <div class="item item4">Store 4</div>
+    <div class="item item5">Store 5</div>
+    <div class="item item6">Store 6</div>
+    <div class="item">Store 7</div>
+    <div class="item">Store 8</div>
+    <div class="item">Store 9</div>
+    <div class="item">Store 10</div>
+    <div class="item">Store 11</div>
+    <div class="item">Store 12</div>
+    <div class="item">Store 13</div>
+    <div class="item">Store 14</div>
+    <div class="item">Store 15</div>
+    <div class="item">Store 16</div>
+    <div class="item">Store 17</div>
+  </div>
+</body>
+</html>
