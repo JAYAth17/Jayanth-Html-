@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The 17</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1fd215;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e40606;
+      color: #010101;
+      padding: 1rem 2rem;
+    }
+
+    .nav a {
+      margin-left: 1rem;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #f0db4f;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: #3e0202;
+      padding: 1rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.8rem;
+    }
+
+    .main {
+      flex: 1;
+      padding: 2rem;
+      background: #fafafa;
+    }
+
+    .cards {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      flex: 2;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo"><b>17</b></div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <div class="content">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <h1>Welcome to The 17</h1>
+        <p>This site contains Sports Products.</p>
+        <div class="cards">
+          <div class="card">Football</div>
+          <div class="card">Cricket</div>
+          <div class="card">BasketBall</div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      &copy; 2025 MySite. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
