@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 17 Stores</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      padding: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 200px 150px;
+      row-gap: 20px;
+      column-gap: 20px;
+      justify-content: space-around;
+      align-content: center;
+      height: 90vh;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 2px solid #ddd;
+      margin: 20px;
+      border-radius: 12px;
+    }
+
+    .grid-item {
+      background-color: #fdfdfd;
+      color: rgb(9, 9, 9);
+      font-size: 1.3em;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5%;
+      box-shadow: 0 4px 10px rgba(248, 11, 11, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.05);
+    }
+
+    .item1 {
+      grid-column: 1 / span;
+      background-color: #e63946;
+    }
+
+    .item2 {
+      grid-row: 1 / span 2;
+      background-color: #f77f00;
+    }
+
+    .item3 {
+      grid-area: 2 ;
+      background-color: #2a9d8f;
+    }
+
+    .item4 {
+      justify-self: center;
+      background-color: #264653;
+    }
+
+    .item5 {
+      justify-self: center;
+      background-color: #457b9d;
+    }
+
+    .item6 {
+      order: -1;
+      background-color: #8ac926;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>The 17 Stores – Sports Equipment Hub</h1>
+
+  <div class="grid-container">
+    <div class="grid-item item1">Football Gear</div>
+    <div class="grid-item item2">Cricket Equipment</div>
+    <div class="grid-item item3">Basketball Kits</div>
+    <div class="grid-item item4">Indian Sports Specials</div>
+    <div class="grid-item item5">Accessories</div>
+    <div class="grid-item item6">Exclusive Offers</div>
+  </div>
+
+  <footer>
+    © 2025 The 17 Stores | Sports Equipment for Every Game
+  </footer>
+</body>
+</html>
