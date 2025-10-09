@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Full Project - Single File</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+            padding: 10px;
+        }
+        button {
+            margin: 5px 0;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><b>JavaScript </b></h1>
+
+   
+    <p>
+        JavaScript (JS) is a programming language that makes web pages interactive and dynamic.
+        HTML gives structure, CSS styles it, and JavaScript can update and change both HTML and CSS.
+        JS can also calculate, manipulate, and validate data.
+    </p>
+
+    <hr>
+
+    <h2>1. Inline JavaScript</h2>
+    <!-- Inline JavaScript directly inside an HTML attribute -->
+    <button onclick="alert('Inline JS Called!')">Click Me (Inline JS)</button>
+
+    <hr>
+
+    <h2>2. Internal JavaScript</h2>
+    <!-- Internal JS placed inside script tag -->
+    <button id="internalBtn">Click Me (Internal JS)</button>
+
+    <hr>
+
+    <h2>3. External JavaScript (Simulated in single file)</h2>
+    <button onclick="externalFunction1()">Click Me (External Script 1)</button>
+    <button onclick="externalFunction2()">Click Me (External Script 2)</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+        // Internal JavaScript
+
+        // Single-line comment: Add click event
+        const internalBtn = document.getElementById('internalBtn');
+        internalBtn.addEventListener('click', function() {
+            alert('Internal JS Called!');
+        });
+
+        /*
+        Multi-line comment:
+        Log name and age to the console
+        */
+        const name = "Jayanth";
+        const age = 20;
+        console.log("Name:", name);
+        console.log("Age:", age);
+
+        // Show a welcome alert when page loads
+        alert("Welcome to JavaScript Full Project!");
+
+        // External Script 1 (simulated)
+        function externalFunction1() {
+            alert("External Script 1 Called!");
+            console.log("Function externalFunction1 executed.");
+        }
+
+        // External Script 2 (simulated)
+        function externalFunction2() {
+            alert("External Script 2 Called!");
+            console.log("Function externalFunction2 executed.");
+        }
+    </script>
+
+</body>
+</html>
