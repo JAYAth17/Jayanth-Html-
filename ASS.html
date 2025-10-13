@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 17 Stores</title>
+</head>
+<body style="font-family: Arial; background-color: #f5f5f5; padding: 20px;">
+
+  <h1>⚽ The 17 Stores </h1>
+  <p id="result"></p>
+
+  <script>
+    document.write("<h2>Welcome to The 17 Stores!</h2>");
+
+    let football = 1200;
+    let cricketBat = 1500;
+    let hockeyStick = 900;
+    let volleyball = 700;
+
+    let total = football + cricketBat + hockeyStick + volleyball;
+    document.write("<h3>1️⃣ Arithmetic Operations</h3>");
+    document.write("Total price of all sports items: ₹" + total + "<br>");
+    document.write("Difference between cricket bat and football: ₹" + (cricketBat - football) + "<br>");
+    document.write("Double the price of volleyball: ₹" + (volleyball * 2) + "<br>");
+    document.write("Average price: ₹" + (total / 4) + "<br>");
+    document.write("Modulus example (1500 % 1200): " + (1500 % 1200) + "<br><br>");
+
+    document.write("<h3>2️⃣ Comparison Operators</h3>");
+    document.write("Is football equal to cricket bat? " + (football == cricketBat) + "<br>");
+    document.write("Is football price and cricket bat price identical (===)? " + (football === cricketBat) + "<br><br>");
+
+    document.write("<h3>3️⃣ Logical Operators</h3>");
+    let highPrice = (cricketBat > 1000);
+    let discountAvailable = true;
+
+    document.write("High Price & Discount both true? " + (highPrice && discountAvailable) + "<br>");
+    document.write("High Price or Discount available? " + (highPrice || discountAvailable) + "<br><br>");
+
+    document.write("<h3>4️⃣ Product Rating Check</h3>");
+    let rating = -3;
+    if (rating > 0) {
+      document.write("Customer rating is Positive 🌟<br><br>");
+    } else if (rating < 0) {
+      document.write("Customer rating is Negative ❌<br><br>");
+    } else {
+      document.write("Customer rating is Neutral ⚪<br><br>");
+    }
+
+    document.write("<h3> Day Offers at The 17 Stores</h3>");
+    let day = 4;
+    switch(day) {
+      case 1: document.write("Sunday Offer: 20% off on Footballs ⚽"); break;
+      case 2: document.write("Monday Offer: Buy 1 Get 1 on Jerseys 👕"); break;
+      case 3: document.write("Tuesday Offer: 15% off on Cricket Bats 🏏"); break;
+      case 4: document.write("Wednesday Offer: Free Volleyball Net 🏐"); break;
+      case 5: document.write("Thursday Offer: Flat ₹500 off on Hockey Gear 🏑"); break;
+      case 6: document.write("Friday Offer: 10% off on all items 💸"); break;
+      case 7: document.write("Saturday Offer: Weekend Mega Sale 🎉"); break;
+      default: document.write("Invalid day! Please enter 1–7.");
+    }
+  </script>
+
+</body>
+</html>
