@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping & Sports</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #0077cc;
+    }
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 70%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #444;
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 6px;
+    }
+    ul {
+      line-height: 1.8;
+    }
+    .output {
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Shopping & Sports Page</h1>
+
+  <section id="shopping">
+    <h2>🛍️ Shopping</h2>
+    <p>Explore top online stores:</p>
+    <ul>
+      <li><a href="https://www.amazon.in" target="_blank">Amazon</a></li>
+      <li><a href="https://www.flipkart.com" target="_blank">Flipkart</a></li>
+      <li><a href="https://www.myntra.com" target="_blank">Myntra</a></li>
+    </ul>
+  </section>
+
+  <section id="sports">
+    <h2>⚽ Sports</h2>
+    <p>Follow your favorite sports updates:</p>
+    <ul>
+      <li><a href="https://www.nba.com" target="_blank">Basketball – NBA</a></li>
+      <li><a href="https://www.fcbarcelona.com" target="_blank">Football – FC Barcelona</a></li>
+      <li><a href="https://www.icc-cricket.com" target="_blank">Cricket – ICC</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧮 JavaScript Function Output</h2>
+    <div class="output" id="output"></div>
+  </section>
+
+  <script>
+    function add(a, b) {
+      return a + b;
+    }
+
+    const multiply = function(a, b) {
+      return a * b;
+    };
+
+    const subtract = (a, b) => a - b;
+
+    function greet(name) {
+      return `Hello, ${name}!`;
+    }
+
+    let globalVar = "I'm a global variable";
+
+    function scopeExample() {
+      let localVar = "I'm a local variable";
+      return `${globalVar} | ${localVar}`;
+    }
+
+    let result = `
+      Addition: ${add(10, 5)}<br>
+      Multiplication: ${multiply(10, 5)}<br>
+      Subtraction: ${subtract(10, 5)}<br>
+      ${greet("Saroo")}<br>
+      Scope Example: ${scopeExample()}<br>
+      Global Variable: ${globalVar}
+    `;
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>
