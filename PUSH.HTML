@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The 17 Stores - Sports Shopping Cart</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  h1 { color: #2c3e50; }
+  .product-list { margin-top: 20px; }
+  .product-list li { margin: 5px 0; }
+  button { margin: 5px 2px; }
+</style>
+</head>
+<body>
+
+<h1>The 17 Stores - Sports Shopping Cart</h1>
+
+<div>
+  <button onclick="addProductEnd()">Add 'Basketball'</button>
+  <button onclick="removeProductEnd()">Remove Last Product</button>
+  <button onclick="removeProductStart()">Remove First Product</button>
+  <button onclick="addProductStart()">Add 'Football' at Start</button>
+</div>
+
+<ul class="product-list" id="productList"></ul>
+
+<script>
+  // Initialize products array
+  let products = ['Tennis Racket', 'Running Shoes', 'Yoga Mat'];
+
+  // Function to display all products using for loop
+  function displayProducts() {
+    const list = document.getElementById('productList');
+    list.innerHTML = '';
+    for(let i = 0; i < products.length; i++) {
+      let li = document.createElement('li');
+      li.textContent = products[i];
+      list.appendChild(li);
+    }
+  }
+
+  // Add 'Basketball' to the end (push)
+  function addProductEnd() {
+    products.push('Basketball');
+    displayProducts();
+  }
+
+  // Remove last product (pop)
+  function removeProductEnd() {
+    products.pop();
+    displayProducts();
+  }
+
+  // Remove first product (shift)
+  function removeProductStart() {
+    products.shift();
+    displayProducts();
+  }
+
+  // Add 'Football' at the start (unshift)
+  function addProductStart() {
+    products.unshift('Football');
+    displayProducts();
+  }
+
+  // Initial display
+  displayProducts();
+</script>
+
+</body>
+</html>
