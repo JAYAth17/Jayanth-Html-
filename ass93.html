@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>17 Stores Shopping</title>
+</head>
+<body>
+  <h1>17 Stores Shopping</h1>
+  <p id="output"></p>
+
+  <script>
+    const shopper = {
+      name: "Jayanth",
+      age: 21,
+      sayHello: function() {
+        return "Hello! I'm " + this.name + ", welcome to 17 Stores Shopping!";
+      }
+    };
+
+    document.getElementById("output").innerHTML = 
+      "Before Update:<br>Name: " + shopper.name + "<br>Age: " + shopper.age + "<br><br>";
+
+    shopper.name = "Kalasri";
+    shopper.age = 20;
+
+    document.getElementById("output").innerHTML += 
+      "After Update:<br>Name: " + shopper.name + "<br>Age: " + shopper.age + "<br><br>" +
+      shopper.sayHello();
+  </script>
+</body>
+</html>
