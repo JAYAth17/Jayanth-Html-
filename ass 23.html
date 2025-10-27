@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Features Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin-top: 40px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    p {
+      font-size: 17px;
+      margin: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>ES6 Examples</h2>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // ES6_1
+    const storeName = "The 17 Stores";
+    let item = "Football";
+    const price = 1999;
+
+    const message = `Welcome to ${storeName}! Today's top deal: ${item} for just ₹${price}.`;
+    
+    function greetUser(name = "Customer") {
+      return `Hello, ${name}! Enjoy shopping at ${storeName}.`;
+    }
+
+    // ES6_2
+    const sports = ["Football", "Basketball", "Cricket"];
+    const [sport1, sport2, sport3] = sports;
+
+    const product = { id: 101, name: "Jersey", cost: 999 };
+    const { id, name, cost } = product;
+
+    const newSports = [...sports, "Tennis", "Hockey"];
+
+    function totalPrice(...prices) {
+      return prices.reduce((sum, val) => sum + val, 0);
+    }
+
+    // ES6_3
+    const add = (a, b) => a + b;
+    const multiply = (a, b) => a * b;
+
+    class Store {
+      constructor(storeName, location) {
+        this.storeName = storeName;
+        this.location = location;
+      }
+      info() {
+        return `${this.storeName} is located in ${this.location}.`;
+      }
+    }
+
+    const myStore = new Store("The 17 Stores", "Chennai");
+
+    output.innerHTML = `
+      <h3>ES6_1</h3>
+      <p>${message}</p>
+      <p>${greetUser()}</p>
+      <h3>ES6_2</h3>
+      <p>Destructured array: ${sport1}, ${sport2}, ${sport3}</p>
+      <p>Destructured object: ID=${id}, Name=${name}, Cost=₹${cost}</p>
+      <p>Copied array using spread: ${newSports.join(", ")}</p>
+      <p>Total Price using rest: ₹${totalPrice(1000, 2000, 3000)}</p>
+      <h3>ES6_3</h3>
+      <p>Arrow function add: ${add(5, 10)}</p>
+      <p>Arrow function multiply: ${multiply(3, 4)}</p>
+      <p>Class Example: ${myStore.info()}</p>
+    `;
+  </script>
+
+</body>
+</html>
