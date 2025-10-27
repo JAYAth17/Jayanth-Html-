@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Text and Style Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #heading {
+      color: black;
+      font-size: 24px;
+    }
+    #paragraph {
+      color: gray;
+      font-size: 18px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="heading">Welcome to The 17 Stores</h2>
+  <p id="paragraph">Explore our latest sports collection here!</p>
+
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="changeStyle()">Change Style</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("heading").innerText = "Welcome to The New 17 Stores!";
+      document.getElementById("paragraph").innerText = "Our new arrivals are now available. Shop today!";
+    }
+
+    function changeStyle() {
+      const heading = document.getElementById("heading");
+      heading.style.color = "darkblue";
+      heading.style.fontSize = "32px";
+      heading.style.textDecoration = "underline";
+    }
+  </script>
+
+</body>
+</html>
