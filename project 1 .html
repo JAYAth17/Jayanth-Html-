@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 17 Stores</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+    }
+    nav ul li:hover {
+      background-color: #333;
+      border-radius: 5px;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: #333;
+      flex-direction: column;
+    }
+    .dropdown a {
+      padding: 8px 12px;
+      color: white;
+      text-decoration: none;
+    }
+    nav ul li:hover .dropdown {
+      display: flex;
+    }
+    main {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .store {
+      background: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>The 17 Stores</h2>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+        <li>
+          <a href="#">Sports</a>
+          <div class="dropdown">
+            <a href="https://www.fcbarcelona.com/en/football">Football</a>
+            <a href="https://www.nba.com">Basketball</a>
+            <a href="https://www.icc-cricket.com">Cricket</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <h2>Welcome to The 17 Stores</h2>
+    <p>Explore our top sports collections below!</p>
+    <div id="storeContainer"></div>
+  </main>
+
+  <main id="about" class="hidden">
+    <h2>About Us</h2>
+    <p>The 17 Stores is your ultimate destination for sports merchandise. We bring you exclusive collections from Football, Basketball, and Cricket.</p>
+  </main>
+
+  <main id="contact" class="hidden">
+    <h2>Contact Us</h2>
+    <p>Email: support@17stores.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Address: 123 Sports Avenue, Chennai, India</p>
+  </main>
+
+  <footer>
+    <p>© 2025 The 17 Stores. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Store data array
+    const stores = [
+      { name: "FC Barcelona", type: "Football", price: 2999 },
+      { name: "NBA Lakers Jersey", type: "Basketball", price: 2499 },
+      { name: "ICC Cricket Bat", type: "Cricket", price: 1999 },
+      { name: "Nike Football", type: "Football", price: 1599 },
+      { name: "Spalding Basketball", type: "Basketball", price: 1799 }
+    ];
+
+    // Use array methods
+    stores.push({ name: "Adidas Cricket Gloves", type: "Cricket", price: 999 });
+    const footballItems = stores.filter(item => item.type === "Football");
+    const totalPrice = stores.reduce((sum, item) => sum + item.price, 0);
+
+    const storeContainer = document.getElementById('storeContainer');
+    storeContainer.innerHTML = '';
+    stores.forEach(item => {
+      const div = document.createElement('div');
+      div.classList.add('store');
+      div.innerHTML = `<h3>${item.name}</h3><p>Category: ${item.type}</p><p>Price: ₹${item.price}</p>`;
+      storeContainer.appendChild(div);
+    });
+
+    // Navigation
+    function showPage(page) {
+      document.querySelectorAll('main').forEach(m => m.classList.add('hidden'));
+      document.getElementById(page).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
