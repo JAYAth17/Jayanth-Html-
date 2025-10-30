@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Stores | Callbacks & Promises</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f8fb;
+      color: #222;
+      padding: 25px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #0a58ca;
+    }
+    .section {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .output {
+      background: #f3f3f3;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-line;
+      margin-top: 10px;
+    }
+    button {
+      background: #0a58ca;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #063e8a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚽ Football Stores — Callbacks & Promises</h1>
+  <p>
+    Welcome to <strong>The Football Store</strong> — a place where we demonstrate how JavaScript handles real-world situations asynchronously,  
+    like checking stock, confirming orders, and handling errors — using <strong>Callbacks</strong> and <strong>Promises</strong>.
+  </p>
+
+  <!-- CALLBACKS -->
+  <div class="section">
+    <h2>1️⃣ Callback Example — Greeting a Customer</h2>
+    <p>
+      A <strong>callback</strong> is a function passed as an argument to another function.  
+      Here, our football store greets a customer and then confirms their purchase using a callback.
+    </p>
+    <div id="callbackOutput" class="output"></div>
+    <button onclick="runCallback()">Run Callback Example</button>
+  </div>
+
+  <!-- PROMISES -->
+  <div class="section">
+    <h2>2️⃣ Promise Example — Checking Football Stock</h2>
+    <p>
+      A <strong>Promise</strong> lets us handle future events, like checking if a football is available.  
+      If the item is <strong>in stock</strong>, the promise is <strong>resolved</strong>.<br>
+      If it’s <strong>out of stock</strong>, the promise is <strong>rejected</strong>.
+    </p>
+    <ul>
+      <li><code>.then()</code> → Handles successful result (stock available)</li>
+      <li><code>.catch()</code> → Handles errors (out of stock)</li>
+    </ul>
+    <div id="promiseOutput" class="output"></div>
+    <button onclick="runPromise()">Run Promise Example</button>
+  </div>
+
+  <script>
+    // --- CALLBACK EXAMPLE ---
+    function runCallback() {
+      const output = document.getElementById("callbackOutput");
+      output.textContent = "";
+
+      function greetCustomer(name, callback) {
+        output.textContent += `👋 Welcome to Football Stores, ${name}!\n`;
+        callback();
+      }
+
+      function confirmPurchase() {
+        output.textContent += "🛒 Your order for an Adidas Football has been confirmed!\n";
+        output.textContent += "✅ Thank you for shopping with us!\n";
+      }
+
+      // Using a callback
+      greetCustomer("Jayanth", confirmPurchase);
+    }
+
+    // --- PROMISE EXAMPLE ---
+    function runPromise() {
+      const output = document.getElementById("promiseOutput");
+      output.textContent = "";
+
+      function checkStock(productName) {
+        return new Promise((resolve, reject) => {
+          output.textContent += `🔍 Checking stock for ${productName}...\n`;
+          setTimeout(() => {
+            const inStock = Math.random() > 0.5; // 50% chance
+            if (inStock) {
+              resolve(`✅ ${productName} is in stock! Proceed to checkout.`);
+            } else {
+              reject(`❌ Sorry, ${productName} is currently out of stock.`);
+            }
+          }, 2000);
+        });
+      }
+
+      // Using then() and catch() to handle the promise
+      checkStock("Nike Premier League Football")
+        .then(message => {
+          output.textContent += message + "\n";
+          return checkStock("Adidas UEFA Champions League Ball");
+        })
+        .then(message => {
+          output.textContent += message + "\n";
+        })
+        .catch(error => {
+          output.textContent += error + "\n";
+        });
+    }
+  </script>
+
+</body>
+</html>
