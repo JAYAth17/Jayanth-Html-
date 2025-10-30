@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Stores | Callbacks, Promises & Async/Await</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #222;
+      padding: 25px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #0a58ca;
+    }
+    .section {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .output {
+      background: #f2f4f5;
+      border-radius: 6px;
+      padding: 10px;
+      font-family: monospace;
+      white-space: pre-line;
+      margin-top: 10px;
+    }
+    button {
+      background: #0a58ca;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 14px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #063e8a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚽ Football Stores — Callbacks, Promises & Async/Await</h1>
+  <p>
+    This page shows how <strong>Football Stores</strong> uses JavaScript's asynchronous features:  
+    first with <strong>callbacks</strong>, then with <strong>promises</strong>, and finally with modern <strong>async/await</strong>.
+  </p>
+
+  <!-- CALLBACK EXAMPLE -->
+  <div class="section">
+    <h2>1️⃣ Function that Accepts a Callback</h2>
+    <p>
+      A <strong>callback</strong> is a function passed as an argument to another function.  
+      Here, our store welcomes the customer, then calls a callback function to confirm their purchase.
+    </p>
+    <div id="callbackOutput" class="output"></div>
+    <button onclick="runCallback()">Run Callback Example</button>
+  </div>
+
+  <!-- PROMISE THEN/CATCH -->
+  <div class="section">
+    <h2>2️⃣ Promise Example (.then / .catch)</h2>
+    <p>
+      A <strong>Promise</strong> represents a future value — it either <strong>resolves</strong> if the football is in stock  
+      or <strong>rejects</strong> if it’s out of stock.
+    </p>
+    <div id="promiseOutput" class="output"></div>
+    <button onclick="runPromise()">Run Promise Example</button>
+  </div>
+
+  <!-- ASYNC/AWAIT -->
+  <div class="section">
+    <h2>3️⃣ Rewriting the Promise using Async/Await</h2>
+    <p>
+      <strong>Async/Await</strong> makes asynchronous code look cleaner and easier to read.  
+      It’s just a modern way of writing promises.
+    </p>
+    <div id="asyncOutput" class="output"></div>
+    <button onclick="runAsyncAwait()">Run Async/Await Example</button>
+  </div>
+
+  <script>
+    // --- 1. Function that accepts a callback ---
+    function runCallback() {
+      const output = document.getElementById("callbackOutput");
+      output.textContent = "";
+
+      function greetCustomer(name, callback) {
+        output.textContent += `👋 Welcome to Football Stores, ${name}!\n`;
+        callback();
+      }
+
+      function confirmPurchase() {
+        output.textContent += "🛒 Your order for a Nike Football has been confirmed!\n";
+        output.textContent += "✅ Thank you for shopping with us!\n";
+      }
+
+      // Using callback
+      greetCustomer("Jayanth", confirmPurchase);
+    }
+
+    // --- 2. Promise that resolves or rejects ---
+    function runPromise() {
+      const output = document.getElementById("promiseOutput");
+      output.textContent = "";
+
+      function checkStock(productName) {
+        return new Promise((resolve, reject) => {
+          output.textContent += `🔍 Checking stock for ${productName}...\n`;
+          setTimeout(() => {
+            const available = Math.random() > 0.5; // Random true/false
+            if (available) {
+              resolve(`✅ ${productName} is available! Proceed to checkout.`);
+            } else {
+              reject(`❌ Sorry, ${productName} is out of stock.`);
+            }
+          }, 2000);
+        });
+      }
+
+      checkStock("Adidas UEFA Champions League Ball")
+        .then(message => output.textContent += message + "\n")
+        .catch(error => output.textContent += error + "\n");
+    }
+
+    // --- 3. Async/Await version ---
+    async function runAsyncAwait() {
+      const output = document.getElementById("asyncOutput");
+      output.textContent = "";
+
+      function checkStock(productName) {
+        return new Promise((resolve, reject) => {
+          output.textContent += `🔎 Checking stock for ${productName}...\n`;
+          setTimeout(() => {
+            const available = Math.random() > 0.5;
+            if (available) {
+              resolve(`✅ ${productName} is in stock!`);
+            } else {
+              reject(`❌ ${productName} is unavailable.`);
+            }
+          }, 2000);
+        });
+      }
+
+      try {
+        const result1 = await checkStock("Puma World Cup Football");
+        output.textContent += result1 + "\n";
+
+        const result2 = await checkStock("Adidas F50 Ball");
+        output.textContent += result2 + "\n";
+      } catch (error) {
+        output.textContent += error + "\n";
+      } finally {
+        output.textContent += "🏁 Stock check completed.\n";
+      }
+    }
+  </script>
+
+</body>
+</html>
