@@ -1,0 +1,102 @@
+// App.jsx
+import React from "react";
+
+// ✅ Reusable Button component
+const Button = ({ text, onClick, type = "button", style = {} }) => {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      style={{
+        backgroundColor: "#2563eb",
+        color: "#fff",
+        padding: "10px 20px",
+        border: "none",
+        borderRadius: "8px",
+        cursor: "pointer",
+        fontSize: "16px",
+        ...style,
+      }}
+      onMouseOver={(e) => (e.target.style.backgroundColor = "#1d4ed8")}
+      onMouseOut={(e) => (e.target.style.backgroundColor = "#2563eb")}
+    >
+      {text}
+    </button>
+  );
+};
+
+// ✅ Header component with props
+const Header = ({ title, subtitle }) => {
+  return (
+    <header
+      style={{
+        backgroundColor: "#1f2937",
+        color: "white",
+        padding: "16px",
+        textAlign: "center",
+      }}
+    >
+      <h1 style={{ fontSize: "28px", fontWeight: "bold", margin: 0 }}>
+        {title}
+      </h1>
+      {subtitle && <p style={{ marginTop: "5px" }}>{subtitle}</p>}
+    </header>
+  );
+};
+
+// ✅ Footer component with props
+const Footer = ({ text }) => {
+  return (
+    <footer
+      style={{
+        backgroundColor: "#111827",
+        color: "#d1d5db",
+        textAlign: "center",
+        padding: "12px",
+        marginTop: "auto",
+      }}
+    >
+      <p style={{ margin: 0 }}>{text}</p>
+    </footer>
+  );
+};
+
+// ✅ Main App component
+function App() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        backgroundColor: "#f3f4f6",
+      }}
+    >
+      <Header title="Welcome to My App" subtitle="Reusable Components in Action" />
+
+      <main
+        style={{
+          flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <h2 style={{ fontSize: "20px", marginBottom: "16px" }}>
+          Click the button below
+        </h2>
+        <Button text="Click Me" onClick={handleClick} />
+      </main>
+
+      <Footer text="© 2025 My React App. All rights reserved." />
+    </div>
+  );
+}
+
+export default App;
